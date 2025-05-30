@@ -3,7 +3,7 @@ import { AuthBindings } from "@refinedev/core";
 import { API_URL, dataProvider } from "./data";
 
 export const authCredientials = {
-  email: "micheal.scott@demo.dundlemufflin.com",
+  email: "michael.scott@dundermifflin.com",
   password: "demodemo",
 };
 
