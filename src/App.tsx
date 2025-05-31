@@ -1,7 +1,8 @@
 import {
-  // Authenticated,
+  Authenticated,
   GitHubBanner,
   Refine,
+  WelcomePage,
 } from "@refinedev/core";
 import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
@@ -10,18 +11,15 @@ import { useNotificationProvider } from "@refinedev/antd";
 import "@refinedev/antd/dist/reset.css";
 import { dataProvider, liveProvider, authProvider } from "./providers";
 import routerBindings, {
+  CatchAllNavigate,
   DocumentTitleHandler,
   UnsavedChangesNotifier,
 } from "@refinedev/react-router";
 import { App as AntdApp } from "antd";
 import { Home, ForgotPassword, Login, Register } from "./pages";
 
-import {
-  BrowserRouter,
-  //  Outlet,
-  Route,
-  Routes,
-} from "react-router";
+import { BrowserRouter, Outlet, Route, Routes } from "react-router";
+import Layout from "./components/layouts";
 
 function App() {
   return (
@@ -45,11 +43,23 @@ function App() {
               }}
             >
               <Routes>
-                <Route index element={<div>Welcome</div>} />
-                <Route index element={<Home />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route
+                  element={
+                    <Authenticated
+                      key="authenticated-layout"
+                      fallback={<CatchAllNavigate to="/login" />}
+                    >
+                      <Layout>
+                        <Outlet />
+                      </Layout>
+                    </Authenticated>
+                  }
+                >
+                  <Route index element={<Home />} />
+                </Route>
               </Routes>
 
               <RefineKbar />
