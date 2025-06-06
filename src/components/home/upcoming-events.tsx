@@ -57,13 +57,14 @@ const UpcomingEvents = () => {
             id: index,
           }))}
           renderItem={() => <UpcomingEventsSkeleton />}
-        ></List>
+        />
       ) : (
         <List
           itemLayout="horizontal"
           dataSource={data?.data || []}
           renderItem={(item) => {
             const renderDate = getDate(item.startDate, item.endDate);
+
             return (
               <List.Item>
                 <List.Item.Meta
@@ -74,14 +75,14 @@ const UpcomingEvents = () => {
                       {item.title}
                     </Text>
                   }
-                ></List.Item.Meta>
+                />
               </List.Item>
             );
           }}
         />
       )}
 
-      {isLoading && data?.data.length < 0 && (
+      {!isLoading && data?.data.length === 0 && (
         <span
           style={{
             display: "flex",

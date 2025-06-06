@@ -1,4 +1,3 @@
-import { CompassTwoTone } from "@ant-design/icons";
 import { GraphQLFormattedError } from "graphql";
 
 type Error = {
