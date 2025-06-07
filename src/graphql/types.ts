@@ -82,9 +82,9 @@ export type DashboardTotalCountsQuery = {
 };
 
 export type DashboardCalendarUpcomingEventsQueryVariables = Types.Exact<{
-  filter: Types.EventFilter;
+  filter?: Types.InputMaybe<Types.EventFilter>;
   sorting?: Types.InputMaybe<Array<Types.EventSort> | Types.EventSort>;
-  paging: Types.OffsetPaging;
+  paging?: Types.InputMaybe<Types.OffsetPaging>;
 }>;
 
 export type DashboardCalendarUpcomingEventsQuery = {
