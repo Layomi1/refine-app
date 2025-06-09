@@ -96,9 +96,7 @@ const DashboardLatestActivities = () => {
                       <Text strong>{deal?.title}</Text>
 
                       <Text>deal</Text>
-                      <Text strong>
-                        {item.action === "CREATED" ? "in" : "to"}
-                      </Text>
+                      <Text>{item.action === "CREATED" ? "in" : "to"}</Text>
                       <Text strong>{deal?.stage.title}</Text>
                     </Space>
                   }
