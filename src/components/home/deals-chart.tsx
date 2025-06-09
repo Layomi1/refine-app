@@ -33,6 +33,9 @@ const DealsChart = () => {
     data: dealData,
     xField: "timeText",
     yField: "value",
+    style: {
+      opacity: 0.2,
+    },
     isStack: false,
     seriesField: "state",
     animate: true,
@@ -49,6 +52,12 @@ const DealsChart = () => {
         },
       },
     },
+    line: {
+      style: {
+        stroke: "blue",
+        strokeWidth: 3,
+      },
+    },
     tooltip: {
       formatter: (data: { state: any; value: any }) => {
         return {
@@ -62,8 +71,10 @@ const DealsChart = () => {
   return (
     <Card
       style={{ height: "100%" }}
-      headStyle={{ padding: "8px 16px" }}
-      bodyStyle={{ padding: "24px 24px 0 24px" }}
+      styles={{
+        header: { padding: "8px 16px" },
+        body: { padding: "24px 24px 0 24px" },
+      }}
       title={
         <div
           style={{

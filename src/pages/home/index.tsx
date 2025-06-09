@@ -2,11 +2,13 @@ import {
   DashboardTotalCountCard,
   DealsChart,
   UpcomingEvents,
+  DashboardLatestActivities,
 } from "@/components";
 import { DASHBOARD_TOTAL_COUNTS_QUERY } from "@/graphql/queries";
 import { DashboardTotalCountsQuery } from "@/graphql/types";
 
 import { useCustom } from "@refinedev/core";
+
 import { Col, Row } from "antd";
 
 export const Home = () => {
@@ -14,7 +16,8 @@ export const Home = () => {
     url: "",
     method: "get",
     meta: {
-      gql: DASHBOARD_TOTAL_COUNTS_QUERY,
+      gqlQuery: DASHBOARD_TOTAL_COUNTS_QUERY,
+      operation: "dashboardTotalCounts",
     },
   });
 
@@ -69,6 +72,11 @@ export const Home = () => {
           }}
         >
           <DealsChart />
+        </Col>
+      </Row>
+      <Row gutter={[32, 32]} style={{ marginTop: "32px" }}>
+        <Col xs="24">
+          <DashboardLatestActivities />
         </Col>
       </Row>
     </div>

@@ -23,16 +23,22 @@ const DashboardTotalCountCard = ({
     yField: "value",
     appendPadding: [1, 0, 0, 0],
     padding: 0,
+    height: 50,
     syncViewPadding: true,
     autoFit: true,
     tooltip: false,
+    style: {
+      opacity: "0.4",
+    },
     animate: false,
-    xAxis: false,
+    xAxis: { line: { style: { lineWidth: 0 } } },
+
     yAxis: {
       tickCount: 12,
       label: {
         style: {
-          stroke: "transparent",
+          fill: "transparent",
+          stroke: 0,
         },
       },
       grid: {
@@ -57,7 +63,11 @@ const DashboardTotalCountCard = ({
   return (
     <Card
       style={{ height: "96px", padding: 0 }}
-      bodyStyle={{ padding: "8px 8px 8px 12px" }}
+      styles={{
+        body: {
+          padding: "8px 8px 8px 12px",
+        },
+      }}
       size="small"
     >
       <div
@@ -85,30 +95,34 @@ const DashboardTotalCountCard = ({
           alignItems: "center",
         }}
       >
-        <Text
-          size="xxxl"
-          strong
-          style={{
-            whiteSpace: "nowrap",
-            flex: 1,
-            flexShrink: 0,
-            textAlign: "start",
-            marginLeft: "48px",
-            fontVariantNumeric: "tabular-nums",
-          }}
-        >
-          {isLoading ? (
-            <Skeleton.Button
-              style={{
-                marginTop: "8px",
-                width: "74px",
-              }}
-            />
-          ) : (
-            totalCount
-          )}
-        </Text>
-        <Area {...config} style={{ width: "50%", backgroundColor: "black" }} />
+        <div style={{ padding: "0 10px" }}>
+          <Text
+            size="xxxl"
+            strong
+            style={{
+              whiteSpace: "nowrap",
+              flex: 1,
+              flexShrink: 0,
+              textAlign: "start",
+              marginLeft: "48px",
+              fontVariantNumeric: "tabular-nums",
+            }}
+          >
+            {isLoading ? (
+              <Skeleton.Button
+                style={{
+                  marginTop: "8px",
+                  width: "74px",
+                }}
+              />
+            ) : (
+              totalCount
+            )}
+          </Text>
+        </div>
+        <div style={{ width: "50%" }}>
+          <Area {...config} />
+        </div>
       </div>
     </Card>
   );
