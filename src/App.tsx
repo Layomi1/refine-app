@@ -16,7 +16,7 @@ import routerBindings, {
   UnsavedChangesNotifier,
 } from "@refinedev/react-router";
 import { App as AntdApp } from "antd";
-import { Home, ForgotPassword, Login, Register } from "./pages";
+import { Home, ForgotPassword, Login, Register, CompanyList } from "./pages";
 
 import { BrowserRouter, Outlet, Route, Routes } from "react-router";
 import Layout from "./components/layouts";
@@ -65,6 +65,7 @@ function App() {
                     }
                   >
                     <Route index element={<Home />} />
+                    <Route path="/companies" element={<CompanyList />} />
                   </Route>
                 </Routes>
 
