@@ -70,7 +70,7 @@ export const CompanyList = ({ children }: React.PropsWithChildren) => {
         <Table {...tableProps} pagination={{ ...tableProps.pagination }}>
           <Table.Column<Company>
             dataIndex="name"
-            title="Comapny Title"
+            title="Company Title"
             defaultFilteredValue={getDefaultFilter("id", filters)}
             filterIcon={<SearchOutlined />}
             filterDropdown={(props) => (
@@ -100,7 +100,7 @@ export const CompanyList = ({ children }: React.PropsWithChildren) => {
           ></Table.Column>
           <Table.Column<Company>
             dataIndex="id"
-            title="actions"
+            title="Actions"
             fixed="right"
             render={(value) => (
               <Space>

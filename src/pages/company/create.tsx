@@ -40,6 +40,7 @@ export const Create = () => {
       gqlQuery: USERS_SELECT_QUERY,
     },
   });
+
   return (
     <CompanyList>
       <Modal {...modalProps} mask={true} title="Create Company" width={512}>
