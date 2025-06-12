@@ -23,11 +23,12 @@ import {
   Register,
   CompanyList,
   Create,
+  List,
 } from "./pages";
 
 import { BrowserRouter, Outlet, Route, Routes } from "react-router";
 import Layout from "./components/layouts";
-import { RefineThemes } from "@refinedev/antd";
+
 import { ConfigProvider } from "antd";
 
 import { resources } from "./config/resources";
@@ -36,7 +37,7 @@ import Edit from "./pages/company/edit";
 function App() {
   return (
     <BrowserRouter>
-      <ConfigProvider theme={RefineThemes.Blue}>
+      <ConfigProvider>
         <GitHubBanner />
         <RefineKbarProvider>
           <AntdApp>
@@ -78,6 +79,9 @@ function App() {
                       <Route path="new" element={<Create />} />
                       <Route path="edit/:id" element={<Edit />} />
                     </Route>
+                  </Route>
+                  <Route path="/tasks">
+                    <Route index element={<List />} />
                   </Route>
                 </Routes>
 

@@ -45,7 +45,7 @@ const DealsChart = () => {
       offsetY: -6,
     },
     yAxis: {
-      tickCount: 12,
+      tickCount: 4,
       label: {
         formatter: (v: string) => {
           return `$${Number(v) / 1000}k`;

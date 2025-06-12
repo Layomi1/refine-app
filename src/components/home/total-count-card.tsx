@@ -31,14 +31,15 @@ const DashboardTotalCountCard = ({
       opacity: "0.4",
     },
     animate: false,
-    xAxis: { line: { style: { lineWidth: 0 } } },
+    // xAxis: { line: { style: { lineWidth: 0 } } },
+    xAxis: false,
 
     yAxis: {
       tickCount: 12,
       label: {
         style: {
           fill: "transparent",
-          stroke: 0,
+          stroke: "transparent",
         },
       },
       grid: {
@@ -79,12 +80,7 @@ const DashboardTotalCountCard = ({
         }}
       >
         {icon}
-        <Text
-          size="md"
-          className="secondary"
-          strong
-          style={{ marginLeft: "8px" }}
-        >
+        <Text size="md" className="secondary" style={{ marginLeft: "8px" }}>
           {title}
         </Text>
       </div>
@@ -92,7 +88,6 @@ const DashboardTotalCountCard = ({
         style={{
           display: "flex",
           justifyContent: "space-between",
-          alignItems: "center",
         }}
       >
         <div style={{ padding: "0 10px" }}>
