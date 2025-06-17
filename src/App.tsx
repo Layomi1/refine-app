@@ -24,6 +24,8 @@ import {
   CompanyList,
   Create,
   List,
+  TasksEdit,
+  TaskCreate,
 } from "./pages";
 
 import { BrowserRouter, Outlet, Route, Routes } from "react-router";
@@ -80,8 +82,16 @@ function App() {
                       <Route path="edit/:id" element={<Edit />} />
                     </Route>
                   </Route>
-                  <Route path="/tasks">
-                    <Route index element={<List />} />
+                  <Route
+                    path="/tasks"
+                    element={
+                      <List>
+                        <Outlet />
+                      </List>
+                    }
+                  >
+                    <Route path="new" element={<TaskCreate />} />
+                    <Route path="edit/:id" element={<TasksEdit />} />
                   </Route>
                 </Routes>
 

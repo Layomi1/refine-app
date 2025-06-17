@@ -7,8 +7,8 @@ import { KanbanBoardContainer } from "./tasks/kanban/board";
 import { KanbanBoard } from "./tasks/kanban/board";
 import KanbanItem from "./tasks/kanban/item";
 import KanbanColumn from "./tasks/kanban/column";
-import { ProjectCard } from "./tasks/kanban/card";
-
+import ProjectCard from "./tasks/kanban/card";
+import { KanbanAddCardButton } from "./tasks/kanban/add-card-button";
 import UpcomingEventsSkeleton from "./skeleton/upcoming-events";
 import ProjectCardSkeleton from "./skeleton/project-card";
 import KanbanColumnSkeleton from "./skeleton/kanban";
@@ -25,6 +25,7 @@ export {
   KanbanBoard,
   KanbanItem,
   ProjectCard,
+  KanbanAddCardButton,
   UpcomingEventsSkeleton,
   ProjectCardSkeleton,
   KanbanColumnSkeleton,

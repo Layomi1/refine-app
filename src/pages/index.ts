@@ -5,3 +5,5 @@ export * from "./register";
 export * from "./company/list";
 export * from "./company/create";
 export * from "./tasks/list";
+export * from "./tasks/create-task";
+export * from "./tasks/edit";
