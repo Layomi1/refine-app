@@ -59,7 +59,7 @@ const DealsChart = () => {
       },
     },
     tooltip: {
-      formatter: (data: { state: any; value: any }) => {
+      formatter: (data) => {
         return {
           name: data.state,
           value: `$${Number(data.value) / 1000}k`,

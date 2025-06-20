@@ -1,9 +1,4 @@
-import {
-  Authenticated,
-  GitHubBanner,
-  Refine,
-  WelcomePage,
-} from "@refinedev/core";
+import { Authenticated, Refine } from "@refinedev/core";
 import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 
@@ -40,7 +35,6 @@ function App() {
   return (
     <BrowserRouter>
       <ConfigProvider>
-        <GitHubBanner />
         <RefineKbarProvider>
           <AntdApp>
             <DevtoolsProvider>
