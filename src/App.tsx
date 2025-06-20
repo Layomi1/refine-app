@@ -24,8 +24,6 @@ import {
   CompanyList,
   Create,
   List,
-  TasksEdit,
-  TaskCreate,
 } from "./pages";
 
 import { BrowserRouter, Outlet, Route, Routes } from "react-router";
@@ -35,6 +33,8 @@ import { ConfigProvider } from "antd";
 
 import { resources } from "./config/resources";
 import Edit from "./pages/company/edit";
+import TaskEdit from "./pages/tasks/edit";
+import TaskCreate from "./pages/tasks/create-task";
 
 function App() {
   return (
@@ -91,7 +91,7 @@ function App() {
                     }
                   >
                     <Route path="new" element={<TaskCreate />} />
-                    <Route path="edit/:id" element={<TasksEdit />} />
+                    <Route path="edit/:id" element={<TaskEdit />} />
                   </Route>
                 </Routes>
 

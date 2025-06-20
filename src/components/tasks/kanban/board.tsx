@@ -57,7 +57,6 @@ export const KanbanBoard = ({
 
   return (
     <DndContext onDragEnd={onDragEnd} sensors={sensors}>
-      {" "}
       {children}
     </DndContext>
   );

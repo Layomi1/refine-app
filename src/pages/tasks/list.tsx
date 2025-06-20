@@ -30,7 +30,7 @@ export const List = ({ children }: React.PropsWithChildren) => {
       {
         field: "title",
         operator: "in",
-        value: ["TODO", "IN", "IN VIEW", "DONE"],
+        value: ["TODO", "IN PROGRESS", "IN REVIEW", "DONE"],
       },
     ],
     sorters: [
