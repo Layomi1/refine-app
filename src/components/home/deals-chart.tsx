@@ -46,20 +46,16 @@ const DealsChart = () => {
     },
     yAxis: {
       tickCount: 4,
+
       label: {
         formatter: (v: string) => {
           return `$${Number(v) / 1000}k`;
         },
       },
     },
-    line: {
-      style: {
-        stroke: "blue",
-        strokeWidth: 3,
-      },
-    },
+
     tooltip: {
-      formatter: (data) => {
+      formatter: (data: { value: number; state: String }) => {
         return {
           name: data.state,
           value: `$${Number(data.value) / 1000}k`,
