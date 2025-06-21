@@ -36,26 +36,25 @@ const DealsChart = () => {
     style: {
       opacity: 0.2,
     },
-    isStack: false,
+    stack: false,
     seriesField: "state",
-    animate: true,
-    startOnZero: false,
-    smooth: true,
+    shapeField: "smooth",
     legend: {
       offsetY: -6,
     },
-    yAxis: {
-      tickCount: 4,
-
-      label: {
-        formatter: (v: string) => {
-          return `$${Number(v) / 1000}k`;
+    axis: {
+      y: {
+        tickCount: 4,
+        label: {
+          formatter: (v: string) => {
+            return `$${Number(v) / 1000}k`;
+          },
         },
       },
     },
 
     tooltip: {
-      formatter: (data: { value: number; state: String }) => {
+      formatter: (data: { value: number; state: string }) => {
         return {
           name: data.state,
           value: `$${Number(data.value) / 1000}k`,

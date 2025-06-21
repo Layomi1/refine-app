@@ -21,52 +21,35 @@ const DashboardTotalCountCard = ({
     data: totalCountVariants[resource].data,
     xField: "index",
     yField: "value",
-    appendPadding: [1, 0, 0, 0],
-    padding: 0,
-    height: 50,
-    syncViewPadding: true,
+    height: 60,
     autoFit: true,
     tooltip: false,
-    style: {
-      opacity: "0.4",
+    axis: {
+      x: false,
+      y: false,
     },
-    animate: false,
-    // xAxis: { line: { style: { lineWidth: 0 } } },
-    xAxis: false,
 
-    yAxis: {
-      tickCount: 12,
-      label: {
-        style: {
-          fill: "transparent",
-          stroke: "transparent",
-        },
-      },
-      grid: {
-        line: {
-          style: {
-            stroke: "transparent",
-          },
-        },
-      },
-    },
-    smooth: true,
+    shapeField: "smooth",
     line: {
       color: primaryColor,
     },
-    areaStyle: () => {
-      return {
-        fill: `l(270) O:#fff 0.2${secondaryColor} 1:${primaryColor}`,
-      };
+
+    area: {
+      style: {
+        fill: `l(270) 0:#fff 0.2:${secondaryColor} 1:${primaryColor}`,
+      },
     },
   };
 
   return (
     <Card
-      style={{ height: "96px", padding: 0 }}
+      style={{
+        height: "96px",
+        padding: "0",
+      }}
       styles={{
         body: {
-          padding: "8px 8px 8px 12px",
+          padding: "10px 8px 10px 12px",
         },
       }}
       size="small"
@@ -87,10 +70,13 @@ const DashboardTotalCountCard = ({
       <div
         style={{
           display: "flex",
+          alignItems: "center",
           justifyContent: "space-between",
+          // paddingBottom: "10px",
+          paddingBottom: "5px",
         }}
       >
-        <div style={{ padding: "0 10px" }}>
+        <div>
           <Text
             size="xxxl"
             strong
